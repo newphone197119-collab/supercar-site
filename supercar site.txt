@@ -1,0 +1,149 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Supercars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<h1 class="title">Luxury Supercar Collection</h1>
+
+<div class="car-container">
+
+    <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753" alt="Lamborghini">
+        <h2>Lamborghini Aventador</h2>
+        <button onclick="togglePrice('l1')">Reveal Price</button>
+        <p id="l1" class="price">$500,000</p>
+    </div>
+
+    <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1605559424843-3a6b0c94f5a2" alt="Bugatti">
+        <h2>Bugatti Chiron</h2>
+        <button onclick="togglePrice('b1')">Reveal Price</button>
+        <p id="b1" class="price">$3,000,000</p>
+    </div>
+
+    <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1617814065893-8c50e90d6e5b" alt="Rolls Royce">
+        <h2>Rolls Royce Phantom</h2>
+        <button onclick="togglePrice('r1')">Reveal Price</button>
+        <p id="r1" class="price">$450,000</p>
+    </div>
+
+</div>
+
+<script>
+function togglePrice(id) {
+    var element = document.getElementById(id);
+    element.classList.toggle("show");
+}
+</script>
+
+</body>
+</html><style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a0033);
+    color: white;
+    overflow-x: hidden;
+}
+
+.background-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(138,43,226,0.4), transparent 70%);
+    top: -200px;
+    right: -200px;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+.title {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 42px;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #a855f7, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.car-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+}
+
+.car-card {
+    width: 320px;
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(138,43,226,0.2);
+    transition: 0.4s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(138,43,226,0.6);
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #7c3aed, #a855f7);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.price {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #facc15;
+}
+
+.price.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width:768px){
+    .car-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}</style>
